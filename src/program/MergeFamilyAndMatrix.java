@@ -97,6 +97,7 @@ public class MergeFamilyAndMatrix {
 		} catch(Exception e) {
 			System.out.println("Problem occurs when read the family.soft file    :(\n");
 			e.getMessage();
+			e.printStackTrace();
 			System.exit(0);
 		}
 		
@@ -186,6 +187,7 @@ public class MergeFamilyAndMatrix {
 		} catch(Exception e) {
 			System.out.println("Problem occurs when read the matrix file    :(\n");
 			e.getMessage();
+			e.printStackTrace();
 			System.exit(0);
 		}
 		
@@ -241,7 +243,6 @@ public class MergeFamilyAndMatrix {
 		// TODO Auto-generated method stub
 		
 		MergeFamilyAndMatrix  mfam = new MergeFamilyAndMatrix();
-		
 		System.out.println("Welcome!  :)");
 		if (args.length == 1 && args[0].equalsIgnoreCase("-h")) {
 			System.out.println("example:");
@@ -251,19 +252,19 @@ public class MergeFamilyAndMatrix {
 					+ "10 is the column of gene symbol in your soft file, ./GSE19332_result.txt is the result file path");
 		} else if (args.length == 4) {
 			System.out.println("start");
-			mfam.setSoftFilePath("\""+args[0]+"\"");
-			mfam.setMatrixFilePath("\""+args[1]+"\"");
+			mfam.setSoftFilePath(args[0]);
+			mfam.setMatrixFilePath(args[1]);
 			mfam.setGeneCol(Integer.parseInt(args[2])-1);
-			mfam.setOutputFilePath("\""+args[3]+"\"");
+			mfam.setOutputFilePath(args[3]);
 			System.out.println("start to read the "+args[0]);
 			mfam.setMap();
-			System.out.println(args[0]+"read over");
+			System.out.println(args[0]+" read over");
 			System.out.println("start to calculate the row of matrix ");
 			mfam.setMatrixRow();
 			System.out.println("calculate over");
 			System.out.println("start to read the "+args[1]);
 			mfam.setMatrix();
-			System.out.println(args[1]+"read over");
+			System.out.println(args[1]+" read over");
 			System.out.println("start to write the result file");
 			mfam.writeFile();	
 			System.out.println("end!");
@@ -271,6 +272,7 @@ public class MergeFamilyAndMatrix {
 		} else {
 			System.out.println("The number of parameters is incorrect    :(");
 		}
+		
 	}
 
 }
