@@ -97,7 +97,6 @@ public class MergeFamilyAndMatrix {
 		} catch(Exception e) {
 			System.out.println("Problem occurs when read the family.soft file    :(\n");
 			e.getMessage();
-			e.printStackTrace();
 			System.exit(0);
 		}
 		
@@ -135,7 +134,6 @@ public class MergeFamilyAndMatrix {
 		} catch(Exception e) {
 			System.out.println("Problem occurs when read the matrix file    :(\n");
 			e.getMessage();
-			e.printStackTrace();
 			System.exit(0);
 		}
 		matrixRow = matrixRow - 2;
@@ -187,7 +185,6 @@ public class MergeFamilyAndMatrix {
 		} catch(Exception e) {
 			System.out.println("Problem occurs when read the matrix file    :(\n");
 			e.getMessage();
-			e.printStackTrace();
 			System.exit(0);
 		}
 		
