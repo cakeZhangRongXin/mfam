@@ -249,8 +249,7 @@ public class MergeFamilyAndMatrix {
 			System.out.println("java -jar mfam.jar ./GSE19332_family.soft ./GSE19332_series_matrix.txt 10 ./GSE19332_result.txt");
 			System.out.println("explanation: ./GSE19332_family.soft is your soft file path, GSE19332_series_matrix.txt is your matrix file path,"
 					+ "10 is the column of gene symbol in your soft file, ./GSE19332_result.txt is the result file path");
-		}
-		if (args.length == 4) {
+		} else if (args.length == 4) {
 			System.out.println("start");
 			mfam.setSoftFilePath("\""+args[0]+"\"");
 			mfam.setMatrixFilePath("\""+args[1]+"\"");
